@@ -39,8 +39,8 @@ chmod +x package/luci-app-athena-led/root/etc/init.d/athena_led package/luci-app
 # 已删（精简，不编）：luci-app-ddns-go / luci-app-taskplan
 # songloft-lite + LuCI 管理（starlight 不在这里编，刷机后在 Songloft 里装）
 # 注意：不要整仓 clone 到 package/，那样会得到 package/songloft-for-router/openwrt/songloft，构建认不出包
-git_sparse_clone main https://github.com/songloft-org/songloft-for-router.git openwrt/songloft
-git_sparse_clone main https://github.com/songloft-org/songloft-for-router.git openwrt/luci-app-songloft
+git_sparse_clone main https://github.com/songloft-org/songloft-for-router openwrt/songloft
+git_sparse_clone main https://github.com/songloft-org/songloft-for-router openwrt/luci-app-songloft
 # git clone --depth=1 https://github.com/chenmozhijin/luci-app-socat package/luci-app-socat
 # git clone --depth=1 https://github.com/Openwrt-Passwall/openwrt-passwall2 package/luci-app-passwall2
 
