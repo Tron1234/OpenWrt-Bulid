@@ -31,24 +31,16 @@ function git_sparse_clone() {
 
 # Go & OpenList & ariang & frp & AdGuardHome & WolPlus & Lucky & OpenAppFilter & 集客无线AC控制器 & 雅典娜LED控制
 git clone --depth=1 https://github.com/sbwml/packages_lang_golang feeds/packages/lang/golang
-git clone --depth=1 https://github.com/sbwml/luci-app-openlist2 package/openlist
-git_sparse_clone ariang https://github.com/laipeng668/packages net/ariang
-git_sparse_clone frp https://github.com/laipeng668/packages net/frp
-mv -f package/frp feeds/packages/net/frp
-git_sparse_clone frp https://github.com/laipeng668/luci applications/luci-app-frpc applications/luci-app-frps
-mv -f package/luci-app-frpc feeds/luci/applications/luci-app-frpc
-mv -f package/luci-app-frps feeds/luci/applications/luci-app-frps
-git_sparse_clone master https://github.com/kenzok8/openwrt-packages adguardhome luci-app-adguardhome
-git_sparse_clone main https://github.com/VIKINGYFY/packages luci-app-wolplus
-git clone --depth=1 https://github.com/gdy666/luci-app-lucky package/luci-app-lucky
-git clone --depth=1 https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
-git clone --depth=1 https://github.com/lwb1978/openwrt-gecoosac package/openwrt-gecoosac
+# 已删（精简，不编）：openlist / ariang / frp / frpc / frps / adguardhome / wolplus / lucky / OpenAppFilter / gecoosac
 git clone --depth=1 https://github.com/NONGFAH/luci-app-athena-led package/luci-app-athena-led
 chmod +x package/luci-app-athena-led/root/etc/init.d/athena_led package/luci-app-athena-led/root/usr/sbin/athena-led
 
 #克隆后自己添加
-git clone --depth=1 https://github.com/sirpdboy/luci-app-ddns-go package/luci-app-ddns-go
-git clone --depth=1 https://github.com/sirpdboy/luci-app-taskplan package/luci-app-taskplan
+# 已删（精简，不编）：luci-app-ddns-go / luci-app-taskplan
+# songloft-lite + LuCI 管理（starlight 不在这里编，刷机后在 Songloft 里装）
+# 注意：不要整仓 clone 到 package/，那样会得到 package/songloft-for-router/openwrt/songloft，构建认不出包
+git_sparse_clone main https://github.com/songloft-org/songloft-for-router.git openwrt/songloft
+git_sparse_clone main https://github.com/songloft-org/songloft-for-router.git openwrt/luci-app-songloft
 # git clone --depth=1 https://github.com/chenmozhijin/luci-app-socat package/luci-app-socat
 # git clone --depth=1 https://github.com/Openwrt-Passwall/openwrt-passwall2 package/luci-app-passwall2
 
